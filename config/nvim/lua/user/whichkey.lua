@@ -84,6 +84,7 @@ local mappings = {
 	["r"] = { '<cmd>lua require("user.lsp.handlers").run()<CR>', "Run" },
 	["T"] = { '<cmd>lua require("user.lsp.handlers").test()<CR>', "Test" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+	["m"] = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown preview" },
 	["w"] = { "<cmd>w<CR>", "Save" },
 	["q"] = { "<cmd>q<CR>", "Quit" },
 	["h"] = { "<cmd>set hlsearch!<CR>", "Toggle highlight" },
