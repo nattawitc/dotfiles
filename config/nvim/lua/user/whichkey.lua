@@ -98,7 +98,7 @@ local mappings = {
 		name = "Search",
 		b = { "<cmd>Telescope buffers<CR>", "Buffers" },
 		B = { "<cmd>Telescope git_branches<CR>", "Checkout branch" },
-		f = { "<cmd>Telescope find_files<CR>", "Files" },
+		f = { "<cmd>Telescope find_files hidden=true<CR>", "Files" },
 		g = { "<cmd>Telescope live_grep<CR>", "Grep" },
 		h = { "<cmd>Telescope help_tags<CR>", "Find Help" },
 		M = { "<cmd>Telescope man_pages<CR>", "Man Pages" },
@@ -160,6 +160,7 @@ local mappings = {
 	},
 	t = {
 		name = "Tabs",
+		N = { ":tabnew<CR>", "New" },
 		n = { ":tabprevious<CR>", "Next" },
 		b = { ":tabnext<CR>", "Previous" },
 		p = { ":BufferLinePick<CR>", "Select tab" },

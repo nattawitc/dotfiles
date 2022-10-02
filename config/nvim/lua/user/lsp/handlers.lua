@@ -77,7 +77,9 @@ M.setup = function()
 end
 
 local format = function()
-	local exclude = { "json" }
+	local exclude = {
+		"json",
+	}
 	for _, ft in ipairs(exclude) do
 		if vim.bo.filetype == ft then
 			return
@@ -85,6 +87,8 @@ local format = function()
 	end
 	vim.lsp.buf.formatting_sync()
 end
+
+local lspg = vim.api.nvim_create_augroup("LSP", { clear = true })
 
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
@@ -112,7 +116,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
-	vim.api.nvim_create_autocmd({ "BufWrite" }, { callback = format })
+	vim.api.nvim_create_autocmd({ "BufWrite" }, { group = lspg, callback = format })
 
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
 end

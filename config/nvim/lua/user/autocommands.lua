@@ -27,3 +27,19 @@ vim.cmd([[
 	endfunction
 	com! DiffSaved call s:DiffWithSaved()
 ]])
+
+local python = vim.api.nvim_create_augroup("python", { clear = true })
+
+local pyopts = {
+	textwidth = 79,
+}
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = python,
+	pattern = { "python" },
+	callback = function()
+		for k, v in pairs(pyopts) do
+			vim.opt_local[k] = v
+		end
+	end,
+})
