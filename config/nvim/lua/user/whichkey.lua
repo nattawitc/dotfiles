@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
+	["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
 	["b"] = { '<cmd>lua require("user.lsp.handlers").build()<CR>', "Build" },
 	["r"] = { '<cmd>lua require("user.lsp.handlers").run()<CR>', "Run" },
 	["T"] = { '<cmd>lua require("user.lsp.handlers").test()<CR>', "Test" },

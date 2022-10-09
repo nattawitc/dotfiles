@@ -5,7 +5,9 @@ end
 
 configs.setup({
 	ensure_installed = "all", -- one of "all" or a list of languages
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	ignore_install = {
+		"phpdoc", -- doesn't work with apple silicon
+	}, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "css" }, -- list of language that will be disabled
@@ -25,7 +27,7 @@ configs.setup({
 	-- disable autocmd from nvim-ts-context-commentstring
 	-- integrate with Comment plugin
 	context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  }
+		enable = true,
+		enable_autocmd = false,
+	},
 })
