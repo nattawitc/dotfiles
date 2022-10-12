@@ -121,6 +121,26 @@ local function lsp_keymaps(bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
 end
 
+local is_helm = function()
+	local root = vim.loop.cwd()
+	local file = vim.api.nvim_buf_get_name(0)
+	local file_noroot = file:gsub(root:gsub("%-", "%%-") .. "/", "")
+
+	local dir_levels = {}
+	for str in string.gmatch(file_noroot, "([^/]+)") do
+		table.insert(dir_levels, str)
+	end
+
+	for _, v in ipairs(dir_levels) do
+		local exist = vim.loop.fs_stat(root .. "/Chart.yaml") ~= nil
+		if exist then
+			return true
+		end
+		root = root .. "/" .. v
+	end
+	return false
+end
+
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.document_formatting = false
@@ -128,6 +148,10 @@ M.on_attach = function(client, bufnr)
 
 	if client.name == "sumneko_lua" then
 		client.server_capabilities.document_formatting = false
+	end
+
+	if vim.bo[bufnr].filetype == "yaml" and is_helm() then
+		vim.diagnostic.disable()
 	end
 
 	lsp_keymaps(bufnr)
