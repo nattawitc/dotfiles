@@ -1,0 +1,107 @@
+{
+	"airis commit message": {
+		"prefix": "rcommit",
+		"body": [
+			"${1|build,chore,ci,docs,feat,fix,perf,refactor,revert,style,test|}: $2",
+			"",
+			"Notion: $3"
+		]
+	},
+	"airis commit message breaking": {
+		"prefix": "rcommitbreak",
+		"body": [
+			"${1|build,chore,ci,docs,feat,fix,perf,refactor,revert,style,test|}!: $2",
+			"",
+			"Notion: $3",
+			"BREAKING: $4"
+		]
+	},
+	"airis commit build": {
+		"prefix": "rcommitbuild",
+		"body": [
+			"build: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit chore": {
+		"prefix": "rcommitchore",
+		"body": [
+			"chore: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit ci": {
+		"prefix": "rcommitci",
+		"body": [
+			"ci: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit docs": {
+		"prefix": "rcommitdocs",
+		"body": [
+			"docs: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit feat": {
+		"prefix": "rcommitfeat",
+		"body": [
+			"feat: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit fix": {
+		"prefix": "rcommitfix",
+		"body": [
+			"fix: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit perf": {
+		"prefix": "rcommitperf",
+		"body": [
+			"perf: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit refactor": {
+		"prefix": "rcommitrefactor",
+		"body": [
+			"refactor: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit revert": {
+		"prefix": "rcommitrevert",
+		"body": [
+			"revert: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit style": {
+		"prefix": "rcommitstyle",
+		"body": [
+			"style: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+	"airis commit test": {
+		"prefix": "rcommittest",
+		"body": [
+			"test: $1",
+			"",
+			"Notion: $2"
+		]
+	},
+}

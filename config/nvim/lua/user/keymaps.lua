@@ -153,3 +153,14 @@ keymap("o", "/", "<Plug>(easymotion-tn)", emopts)
 keymap("n", "<leader>mc", "<Plug>(easymotion-overwin-f2)", emopts)
 keymap("n", "<leader>mj", "<Plug>(easymotion-j)", emopts)
 keymap("n", "<leader>mk", "<Plug>(easymotion-k)", emopts)
+
+-- luasnip
+-- For changing choices in choiceNodes (not strictly necessary for a basic setup).
+local ls = require("luasnip")
+local next_choice = function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end
+
+keymap({ "i", "s" }, "<C-e>", next_choice, merge({ silent = true }, opts))
