@@ -15,7 +15,7 @@ end
 --end
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 vim.g.mapleader = ","
