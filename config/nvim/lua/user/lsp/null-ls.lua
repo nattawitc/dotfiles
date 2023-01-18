@@ -11,11 +11,15 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = {} }),
-		formatting.isort,
+		-- python
+		formatting.ruff,
+		--formatting.isort,
 		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.stylua,
 		formatting.autopep8,
-		diagnostics.flake8,
+		diagnostics.ruff,
+		--diagnostics.flake8,
+
+		formatting.prettier.with({ extra_args = {} }),
+		formatting.stylua,
 	},
 })
