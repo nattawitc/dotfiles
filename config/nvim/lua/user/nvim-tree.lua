@@ -8,6 +8,11 @@ if not config_status_ok then
 	return
 end
 
+local view_status_ok, nvim_tree_view = pcall(require, "nvim-tree.view")
+if not view_status_ok then
+	return
+end
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
@@ -66,6 +71,18 @@ nvim_tree.setup({
 		},
 	},
 	git = {
-		ignore = false,
+		--ignore = false,
 	},
 })
+
+local customToggle = function()
+	local onTree = vim.bo.filetype == "NvimTree"
+	local visible = nvim_tree_view.is_visible()
+	if onTree or not visible then
+		vim.cmd("NvimTreeToggle")
+	else
+		vim.cmd("NvimTreeFocus")
+	end
+end
+
+vim.api.nvim_create_user_command("NvimTreeToggleCustom", customToggle, {})
