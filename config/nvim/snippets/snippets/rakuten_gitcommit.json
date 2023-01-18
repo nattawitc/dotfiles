@@ -104,4 +104,12 @@
 			"Notion: $2"
 		]
 	},
+	"airis commit deployment": {
+		"prefix": "rcommitdeployment",
+		"body": [
+			"feat: Scheduled deployment for the week of ${1:YYYY}-${2:MM}-${3:DD} (RC${4:#})",
+			"",
+			"Notion: $5"
+		]
+	}
 }
