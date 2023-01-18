@@ -67,6 +67,7 @@ return packer.startup(function(use)
 		end,
 		ft = { "markdown" },
 	})
+	use({ "preservim/tagbar" })
 
 	-- Colorscheme
 	use({ "nanotech/jellybeans.vim" })
@@ -96,7 +97,6 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	--	use({ "p00f/nvim-ts-rainbow",requires = {"nvim-treesitter/nvim-treesitter" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", requires = { "nvim-treesitter/nvim-treesitter" } }) -- context aware commenting
-
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "tpope/vim-fugitive" })
