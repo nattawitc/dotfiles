@@ -12,14 +12,16 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- python
-		formatting.ruff,
-		--formatting.isort,
+		--[[ formatting.ruff, ]]
+		formatting.isort,
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.autopep8,
-		diagnostics.ruff,
-		--diagnostics.flake8,
+		diagnostics.flake8,
 
+		-- js
 		formatting.prettier.with({ extra_args = {} }),
+
+		-- lua
 		formatting.stylua,
 	},
 })

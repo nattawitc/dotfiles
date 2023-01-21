@@ -87,8 +87,11 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
+	--[[ use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer ]]
+	use({ "williamboman/mason.nvim" }) -- manage lsp, dap, linter etc.
+	use({ "williamboman/mason-lspconfig.nvim" }) -- bridges mason.nvim with the lspconfig plugin
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+	use({ "mfussenegger/nvim-dap" }) -- Debug Adapter Protocol client
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
