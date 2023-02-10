@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-	["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
+	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
 	["b"] = { '<cmd>lua require("user.lsp.handlers").build()<CR>', "Build" },
 	["r"] = { '<cmd>lua require("user.lsp.handlers").run()<CR>', "Run" },
 	["T"] = { '<cmd>lua require("user.lsp.handlers").test()<CR>', "Test" },
@@ -203,7 +203,7 @@ local vopts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 local vmappings = {
-	["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
 }
 
 which_key.setup(setup)
