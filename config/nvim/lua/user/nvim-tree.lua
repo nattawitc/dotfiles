@@ -13,7 +13,26 @@ if not view_status_ok then
 	return
 end
 
+local api_ok, api = pcall(require, "nvim-tree.api")
+if not api_ok then
+	return
+end
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
+
+local function on_attach(bufnr)
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+	api.config.mappings.default_on_attach(bufnr)
+
+	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "o", api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+	vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
+end
 
 nvim_tree.setup({
 	update_focused_file = {
@@ -58,17 +77,11 @@ nvim_tree.setup({
 			error = "",
 		},
 	},
+	on_attach = on_attach,
 	view = {
 		width = 30,
 		--height = 30,
 		side = "left",
-		mappings = {
-			list = {
-				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-				{ key = "h", cb = tree_cb("close_node") },
-				{ key = "v", cb = tree_cb("vsplit") },
-			},
-		},
 	},
 	git = {
 		--ignore = false,
