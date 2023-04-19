@@ -16,11 +16,12 @@ local servers = {
 	"html",
 	"jsonls",
 	"pyright",
-	--[[ "ruff_lsp", ]]
 	-- new python lsp
-	"sumneko_lua",
+	--[[ "ruff_lsp", ]]
+	"lua_ls",
 	"tsserver",
 	"yamlls",
+	"clangd",
 }
 
 --[[ setup must follow this order ]]
