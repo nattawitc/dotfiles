@@ -38,6 +38,10 @@ keymap("n", "<Up>", "gk", opts)
 keymap("n", "<Down>", "gj", opts)
 keymap("n", "j", "gj", opts)
 keymap("n", "k", "gk", opts)
+keymap("v", "<Up>", "gk", opts)
+keymap("v", "<Down>", "gj", opts)
+keymap("v", "j", "gj", opts)
+keymap("v", "k", "gk", opts)
 
 -- Scroll with cursor at the same place on screen
 keymap("n", "K", "<C-y>k", opts)
