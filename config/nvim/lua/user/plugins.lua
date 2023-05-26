@@ -59,14 +59,12 @@ return packer.startup(function(use)
 	use({ "easymotion/vim-easymotion" })
 	use({ "tpope/vim-surround" })
 	use({ "AndrewRadev/linediff.vim" })
-	--[[ use({ ]]
-	--[[ 	"iamcco/markdown-preview.nvim", ]]
-	--[[ 	run = "cd app && npm install", ]]
-	--[[ 	setup = function() ]]
-	--[[ 		vim.g.mkdp_filetypes = { "markdown" } ]]
-	--[[ 	end, ]]
-	--[[ 	ft = { "markdown" }, ]]
-	--[[ }) ]]
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	use({ "preservim/tagbar" })
 
 	-- Colorscheme
