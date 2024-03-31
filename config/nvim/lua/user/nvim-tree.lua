@@ -1,24 +1,20 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-	return
-end
-
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-	return
+	print("nvim_tree failed to load")
+	--[[ return ]]
 end
 
 local view_status_ok, nvim_tree_view = pcall(require, "nvim-tree.view")
 if not view_status_ok then
-	return
+	print("nvim_tree.view failed to load")
+	--[[ return ]]
 end
 
 local api_ok, api = pcall(require, "nvim-tree.api")
 if not api_ok then
-	return
+	print("nvim_tree.api failed to load")
+	--[[ return ]]
 end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local function on_attach(bufnr)
 	local function opts(desc)

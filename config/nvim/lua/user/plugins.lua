@@ -52,7 +52,9 @@ return packer.startup(function(use)
 	use({ "akinsho/toggleterm.nvim" }) -- builtin terminal
 	use({ "ahmedkhalf/project.nvim" }) -- project dir detection
 	use({ "lewis6991/impatient.nvim" }) -- faster lua module loading
-	use({ "lukas-reineke/indent-blankline.nvim" }) -- add ghost line for tab alignment
+	-- indent blankline version 3 have breaking changes
+	-- https://www.reddit.com/r/neovim/comments/16u5abl/indent_blankline_v3_is_released/
+	use({ "lukas-reineke/indent-blankline.nvim", tag = "v2.20.8" }) -- add ghost line for tab alignment
 	use({ "goolord/alpha-nvim" }) -- first page menu
 	use({ "antoinemadec/FixCursorHold.nvim" }) -- fix neovim CursorHold event https://github.com/neovim/neovim/issues/12587
 	use({ "folke/which-key.nvim" }) -- add suggestion popup on keybinding
@@ -66,6 +68,9 @@ return packer.startup(function(use)
 		end,
 	})
 	use({ "preservim/tagbar" })
+	use({ "HampusHauffman/block.nvim" })
+	use({ "petertriho/nvim-scrollbar" })
+	use({ "taybart/b64.nvim" })
 
 	-- Colorscheme
 	use({ "nanotech/jellybeans.vim" })
@@ -98,6 +103,15 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	--	use({ "p00f/nvim-ts-rainbow",requires = {"nvim-treesitter/nvim-treesitter" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", requires = { "nvim-treesitter/nvim-treesitter" } }) -- context aware commenting
+
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
+
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "tpope/vim-fugitive" })
