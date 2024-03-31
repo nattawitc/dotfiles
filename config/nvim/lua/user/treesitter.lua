@@ -24,10 +24,10 @@ configs.setup({
 		-- colors = {}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
-	-- disable autocmd from nvim-ts-context-commentstring
-	-- integrate with Comment plugin
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
+})
+
+-- disable autocmd from nvim-ts-context-commentstring
+-- integrate with Comment plugin
+require("ts_context_commentstring").setup({
+	enable_autocmd = false,
 })
