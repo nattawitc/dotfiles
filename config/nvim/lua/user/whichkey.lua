@@ -158,6 +158,13 @@ local mappings = {
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },
 	},
+	R = {
+		name = "Refactor",
+		i = { "<cmd>Refactor inline_var", "Inline var" },
+		I = { "<cmd>Refactor inline_func", "Inline func" },
+		b = { "<cmd>Refactor extract_block", "Extract block" },
+		bf = { "<cmd>Refactor extract_block_to_file", "Extract block to file" },
+	},
 	t = {
 		name = "Tabs",
 		N = { ":tabnew<CR>", "New" },
@@ -197,7 +204,7 @@ local mappings_remap = {
 }
 
 local vopts = {
-	mode = "v", -- VISUAL mode
+	mode = "x", -- VISUAL mode
 	prefix = "<leader>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
@@ -206,6 +213,13 @@ local vopts = {
 }
 local vmappings = {
 	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
+	R = {
+		name = "Refactor",
+		e = { "<cmd>Refactor extract ", "Extract" },
+		f = { "<cmd>Refactor extract_to_file ", "Extract to" },
+		v = { "<cmd>Refactor extract_var ", "Extract var" },
+		i = { "<cmd>Refactor inline_var", "Inline var" },
+	},
 }
 
 which_key.setup(setup)
