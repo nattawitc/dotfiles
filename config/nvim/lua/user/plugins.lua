@@ -67,6 +67,13 @@ return packer.startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+	use({
+		"OXY2DEV/markview.nvim",
+		requires = {
+			{ "nvim-treesitter/nvim-treesitter" },
+			{ "nvim-tree/nvim-web-devicons" },
+		},
+	})
 	use({ "preservim/tagbar" })
 	use({ "HampusHauffman/block.nvim" })
 	use({ "petertriho/nvim-scrollbar" })
