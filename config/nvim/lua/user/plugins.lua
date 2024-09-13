@@ -78,6 +78,9 @@ return packer.startup(function(use)
 	use({ "HampusHauffman/block.nvim" })
 	use({ "petertriho/nvim-scrollbar" })
 	use({ "taybart/b64.nvim" })
+	use({
+		"zbirenbaum/copilot.lua",
+	})
 
 	-- Colorscheme
 	use({ "nanotech/jellybeans.vim" })
