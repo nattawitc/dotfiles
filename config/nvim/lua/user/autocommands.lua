@@ -1,5 +1,4 @@
 vim.cmd([[
-
   augroup _git
     autocmd!
     autocmd FileType gitcommit setlocal wrap
@@ -12,9 +11,14 @@ vim.cmd([[
     autocmd FileType markdown setlocal spell
   augroup end
 
+	augroup _helm
+		autocmd!
+		autocmd FileType helm setlocal expandtab
+	augroup end
+
   augroup _auto_resize
     autocmd!
-    autocmd VimResized * tabdo wincmd = 
+    autocmd VimResized * tabdo wincmd =
   augroup end
 
 

@@ -13,14 +13,16 @@ local servers = {
 	"cssls",
 	"eslint",
 	"gopls",
+	"golangci_lint_ls",
 	"html",
 	"jsonls",
 	"pyright",
 	-- new python lsp
 	--[[ "ruff_lsp", ]]
 	"lua_ls",
-	"tsserver",
+	"ts_ls",
 	"yamlls",
+	"helm_ls",
 	"clangd",
 }
 

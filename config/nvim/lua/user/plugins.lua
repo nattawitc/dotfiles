@@ -130,6 +130,7 @@ return packer.startup(function(use)
 
 	-- Language specific
 	use({ "fatih/vim-go" }) -- go
+	use({ "towolf/vim-helm" }) -- for helm filetype detection
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
