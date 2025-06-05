@@ -1,0 +1,19 @@
+{
+	"name": "snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"gitcommit"
+				],
+				"path": "./snippets/rakuten_gitcommit.json"
+			},
+			{
+				"language": [
+					"go"
+				],
+				"path": "./snippets/go.json"
+			}
+		]
+	}
+}
